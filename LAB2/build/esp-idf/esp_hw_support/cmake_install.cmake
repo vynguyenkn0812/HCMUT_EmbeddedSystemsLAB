@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/lab2")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/LAB2")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Espressif/frameworks/esp-idf-v5.1.1/workspace/lab2/lab2/build/esp-idf/esp_hw_support/port/esp32/cmake_install.cmake")
+  include("C:/Espressif/frameworks/esp-idf-v5.1.1/workspace/HCMUT_EmbeddedSystemsLAB/LAB2/build/esp-idf/esp_hw_support/port/esp32/cmake_install.cmake")
 endif()
 

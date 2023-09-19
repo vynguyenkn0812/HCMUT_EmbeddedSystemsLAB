@@ -1,8 +1,8 @@
-# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.1.1/workspace/lab2/lab2/main
+# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.1.1/workspace/HCMUT_EmbeddedSystemsLAB/LAB2/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/lab2")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/LAB2")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
