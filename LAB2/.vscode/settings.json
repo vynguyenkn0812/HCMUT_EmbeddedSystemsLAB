@@ -7,6 +7,12 @@
     "esp_flash.h": "c",
     "esp_err.h": "c",
     "esp_chip_info.h": "c",
-    "freertos.h": "c"
+    "freertos.h": "c",
+    "button.h": "c",
+    "gpio.h": "c",
+    "stdbool.h": "c",
+    "freertosconfig.h": "c",
+    "gptimer.h": "c",
+    "inttypes.h": "c"
   }
 }
