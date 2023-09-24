@@ -15,7 +15,7 @@
 
 TaskHandle_t ISR = NULL;
 
-static void vPrintId()
+void vPrintId()
 {
     while (1)
     {
@@ -23,7 +23,7 @@ static void vPrintId()
         TickType_t xLastWakeupTime = xTaskGetTickCount();
 
         printf("%s", "Student ID: 2014725\r\n");
-        xTaskDelayUntil(xLastWakeupTime, 1000 / portTICK_PERIOD_MS);
+        xTaskDelayUntil(&xLastWakeupTime, 1000 / portTICK_PERIOD_MS);
     }
 }
 
@@ -59,6 +59,6 @@ void app_main(void)
     gpio_isr_handler_add(CONFIG_BUTTON_PIN, button_isr_handler, NULL);
 
     // Create 2 FreeRTOS tasks
-    xTaskCreate(vPrintId, "print id", 4096, NULL, 1, NULL);
-    xTaskCreate(vButtonIsr, "button isr", 4096, NULL, 1, &ISR);
+    xTaskCreate(vPrintId, "print id", 2048, NULL, 1, NULL);
+    xTaskCreate(vButtonIsr, "button isr", 2048, NULL, 1, &ISR);
 }
