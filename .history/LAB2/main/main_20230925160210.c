@@ -38,6 +38,6 @@ void app_main(void){
     // ============================
 
     // Set buttons mode ===========
-    gpio_set_pull_mode (BUTTON_PIN, GPIO_PULLUP_ONLY ) ;
+
     // ============================
 }

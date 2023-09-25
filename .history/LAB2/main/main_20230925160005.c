@@ -32,12 +32,6 @@ void app_main(void){
     gpio_pad_select_gpio(BUTTON_PIN);
     // ============================
 
-    // Set GPIO directions ========
-    gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
-    gpio_set_direction(BUTTON_PIN, GPIO_MODE_INPUT);
-    // ============================
+    // Set GPIO directions
 
-    // Set buttons mode ===========
-    gpio_set_pull_mode (BUTTON_PIN, GPIO_PULLUP_ONLY ) ;
-    // ============================
 }
