@@ -1,0 +1,7 @@
+/*
+ * Created by Nhom 6
+*/
+
+// #define SCHEDULING_MODE_TIME_SLICING
+#define SCHEDULING_MODE_PREEMPTIVE
+// #define SCHEDULING_MODE_CO_OP

@@ -1,5 +1,8 @@
 {
     "idf.espIdfPathWin": "C:\\Users\\Admin\\esp\\esp-idf",
     "idf.pythonBinPathWin": "C:\\Users\\Admin\\.espressif\\python_env\\idf5.1_py3.11_env\\Scripts\\python.exe",
-    "idf.toolsPathWin": "C:\\Users\\Admin\\.espressif"
+    "idf.toolsPathWin": "C:\\Users\\Admin\\.espressif",
+    "files.associations": {
+        "global_define.h": "c"
+    }
 }
