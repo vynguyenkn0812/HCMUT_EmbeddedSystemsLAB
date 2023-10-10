@@ -1,0 +1,32 @@
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/make.exe -f Makefile cmTC_95d0a/fast && C:/MinGW/bin/make.exe  -f CMakeFiles/cmTC_95d0a.dir/build.make CMakeFiles/cmTC_95d0a.dir/build
+make[1]: Entering directory 'D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_95d0a.dir/CMakeCCompilerABI.c.obj
+C:/MinGW/bin/gcc.exe   -v -o CMakeFiles/cmTC_95d0a.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.20/Modules/CMakeCCompilerABI.c"
+/usr/bin/sh: -c: line 0: syntax error near unexpected token `('
+/usr/bin/sh: -c: line 0: `C:/MinGW/bin/gcc.exe   -v -o CMakeFiles/cmTC_95d0a.dir/CMakeCCompilerABI.c.obj -c \C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.20/Modules/CMakeCCompilerABI.c\\'
+make[1]: *** [CMakeFiles/cmTC_95d0a.dir/build.make:78: CMakeFiles/cmTC_95d0a.dir/CMakeCCompilerABI.c.obj] Error 1
+make[1]: Leaving directory 'D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_95d0a/fast] Error 2
+
+
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/make.exe -f Makefile cmTC_be9b0/fast && C:/MinGW/bin/make.exe  -f CMakeFiles/cmTC_be9b0.dir/build.make CMakeFiles/cmTC_be9b0.dir/build
+make[1]: Entering directory 'D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_be9b0.dir/CMakeCXXCompilerABI.cpp.obj
+C:/MinGW/bin/g++.exe   -v -o CMakeFiles/cmTC_be9b0.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.20/Modules/CMakeCXXCompilerABI.cpp"
+/usr/bin/sh: -c: line 0: syntax error near unexpected token `('
+/usr/bin/sh: -c: line 0: `C:/MinGW/bin/g++.exe   -v -o CMakeFiles/cmTC_be9b0.dir/CMakeCXXCompilerABI.cpp.obj -c \C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.20/Modules/CMakeCXXCompilerABI.cpp\\'
+make[1]: *** [CMakeFiles/cmTC_be9b0.dir/build.make:78: CMakeFiles/cmTC_be9b0.dir/CMakeCXXCompilerABI.cpp.obj] Error 1
+make[1]: Leaving directory 'D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_be9b0/fast] Error 2
+
+
+
+

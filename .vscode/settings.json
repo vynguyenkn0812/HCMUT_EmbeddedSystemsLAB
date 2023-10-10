@@ -1,8 +1,87 @@
 {
-    "idf.espIdfPathWin": "C:\\Users\\Admin\\esp\\esp-idf",
-    "idf.pythonBinPathWin": "C:\\Users\\Admin\\.espressif\\python_env\\idf5.1_py3.11_env\\Scripts\\python.exe",
-    "idf.toolsPathWin": "C:\\Users\\Admin\\.espressif",
-    "files.associations": {
-        "global_define.h": "c"
-    }
+  "idf.espIdfPathWin": "C:/Espressif/frameworks/esp-idf-v5.0.2/",
+  "idf.pythonBinPathWin": "C:/Espressif/python_env/idf5.0_py3.11_env/Scripts/python.exe",
+  "idf.toolsPathWin": "C:\\Espressif",
+  "files.associations": {
+    "*.tsx": "typescriptreact",
+    "*.js": "jsonl",
+    "global_define.h": "c",
+    "button.h": "c",
+    "inttypes.h": "c",
+    "stdio.h": "c",
+    "esp_flash.h": "c",
+    "esp_chip_info.h": "c",
+    "sdkconfig.h": "c",
+    "gpio.h": "c",
+    "freertos.h": "c",
+    "task.h": "c",
+    "freertosconfig.h": "c"
+  },
+  "C_Cpp_Runner.cCompilerPath": "gcc",
+  "C_Cpp_Runner.cppCompilerPath": "g++",
+  "C_Cpp_Runner.debuggerPath": "gdb",
+  "C_Cpp_Runner.cStandard": "",
+  "C_Cpp_Runner.cppStandard": "",
+  "C_Cpp_Runner.msvcBatchPath": "",
+  "C_Cpp_Runner.useMsvc": false,
+  "C_Cpp_Runner.warnings": [
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wshadow",
+    "-Wformat=2",
+    "-Wcast-align",
+    "-Wconversion",
+    "-Wsign-conversion",
+    "-Wnull-dereference"
+  ],
+  "C_Cpp_Runner.msvcWarnings": [
+    "/W4",
+    "/permissive-",
+    "/w14242",
+    "/w14287",
+    "/w14296",
+    "/w14311",
+    "/w14826",
+    "/w44062",
+    "/w44242",
+    "/w14905",
+    "/w14906",
+    "/w14263",
+    "/w44265",
+    "/w14928"
+  ],
+  "C_Cpp_Runner.enableWarnings": true,
+  "C_Cpp_Runner.warningsAsError": false,
+  "C_Cpp_Runner.compilerArgs": [],
+  "C_Cpp_Runner.linkerArgs": [],
+  "C_Cpp_Runner.includePaths": [],
+  "C_Cpp_Runner.includeSearch": [
+    "*",
+    "**/*"
+  ],
+  "C_Cpp_Runner.excludeSearch": [
+    "**/build",
+    "**/build/**",
+    "**/.*",
+    "**/.*/**",
+    "**/.vscode",
+    "**/.vscode/**"
+  ],
+  "C_Cpp_Runner.useAddressSanitizer": false,
+  "C_Cpp_Runner.useUndefinedSanitizer": false,
+  "C_Cpp_Runner.useLeakSanitizer": false,
+  "C_Cpp_Runner.showCompilationTime": false,
+  "C_Cpp_Runner.useLinkTimeOptimization": false,
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "idf.customExtraPaths": "C:\\Espressif\\tools\\xtensa-esp-elf-gdb\\11.2_20220823\\xtensa-esp-elf-gdb\\bin;C:\\Espressif\\tools\\riscv32-esp-elf-gdb\\11.2_20220823\\riscv32-esp-elf-gdb\\bin;C:\\Espressif\\tools\\xtensa-esp32-elf\\esp-2022r1-11.2.0\\xtensa-esp32-elf\\bin;C:\\Espressif\\tools\\xtensa-esp32s2-elf\\esp-2022r1-11.2.0\\xtensa-esp32s2-elf\\bin;C:\\Espressif\\tools\\xtensa-esp32s3-elf\\esp-2022r1-11.2.0\\xtensa-esp32s3-elf\\bin;C:\\Espressif\\tools\\riscv32-esp-elf\\esp-2022r1-11.2.0\\riscv32-esp-elf\\bin;C:\\Espressif\\tools\\esp32ulp-elf\\2.35_20220830\\esp32ulp-elf\\bin;C:\\Espressif\\tools\\cmake\\3.24.0\\bin;C:\\Espressif\\tools\\openocd-esp32\\v0.11.0-esp32-20221026\\openocd-esp32\\bin;C:\\Espressif\\tools\\ninja\\1.10.2;C:\\Espressif\\tools\\idf-exe\\1.0.3;C:\\Espressif\\tools\\ccache\\4.6.2\\ccache-4.6.2-windows-x86_64;C:\\Espressif\\tools\\dfu-util\\0.9\\dfu-util-0.9-win64;C:\\Espressif\\tools\\esp-rom-elfs\\20220823",
+  "idf.customExtraVars": {
+    "OPENOCD_SCRIPTS": "C:\\Espressif\\tools\\openocd-esp32\\v0.11.0-esp32-20221026/openocd-esp32/share/openocd/scripts",
+    "IDF_CCACHE_ENABLE": "1",
+    "ESP_ROM_ELF_DIR": "C:\\Espressif\\tools\\esp-rom-elfs\\20220823/"
+  },
+  "idf.gitPathWin": "C:/Espressif/tools/idf-git/2.39.2/cmd/git.exe",
+  "cmake.sourceDirectory": "D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/LAB2/main",
+  "C_Cpp.errorSquiggles": "enabled",
+  "C_Cpp.intelliSenseEngineFallback": "enabled"
 }

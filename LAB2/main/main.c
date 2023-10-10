@@ -1,6 +1,6 @@
 /*
  * Created by Nhom 6
-*/
+ */
 
 #include <stdio.h>
 #include <inttypes.h>
@@ -22,14 +22,15 @@ void vPrintId()
         // Get tick count at wakeup time
         TickType_t xLastWakeupTime = xTaskGetTickCount();
 
-        printf("%s", "Student ID: 2014725\r\n");
+        printf("%s", "Student ID: 2014603\r\n");
         xTaskDelayUntil(&xLastWakeupTime, 1000 / portTICK_PERIOD_MS);
     }
 }
 
 void IRAM_ATTR button_isr_handler(void *arg)
 {
-    if (is_button_pressed()) xTaskResumeFromISR(ISR);
+    if (is_button_pressed())
+        xTaskResumeFromISR(ISR);
 }
 
 void vButtonIsr(void *arg)

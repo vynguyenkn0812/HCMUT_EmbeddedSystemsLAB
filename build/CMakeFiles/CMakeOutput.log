@@ -1,0 +1,57 @@
+The system is: Windows - 10.0.22621 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: C:/MinGW/bin/gcc.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/3.20.21032501-MSVC_2/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: C:/MinGW/bin/g++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/3.20.21032501-MSVC_2/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/make.exe -f Makefile cmTC_149c6/fast && C:/MinGW/bin/make.exe  -f CMakeFiles/cmTC_149c6.dir/build.make CMakeFiles/cmTC_149c6.dir/build
+make[1]: Entering directory 'D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_149c6.dir/testCCompiler.c.obj
+C:/MinGW/bin/gcc.exe    -o CMakeFiles/cmTC_149c6.dir/testCCompiler.c.obj -c D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_149c6.exe
+"C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/cmTC_149c6.dir/objects.a
+C:/MinGW/bin/ar.exe cr CMakeFiles/cmTC_149c6.dir/objects.a @CMakeFiles/cmTC_149c6.dir/objects1.rsp
+C:/MinGW/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_149c6.dir/objects.a -Wl,--no-whole-archive -o cmTC_149c6.exe -Wl,--out-implib,libcmTC_149c6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_149c6.dir/linklibs.rsp
+make[1]: Leaving directory 'D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/make.exe -f Makefile cmTC_e7b7b/fast && C:/MinGW/bin/make.exe  -f CMakeFiles/cmTC_e7b7b.dir/build.make CMakeFiles/cmTC_e7b7b.dir/build
+make[1]: Entering directory 'D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e7b7b.dir/testCXXCompiler.cxx.obj
+C:/MinGW/bin/g++.exe    -o CMakeFiles/cmTC_e7b7b.dir/testCXXCompiler.cxx.obj -c D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_e7b7b.exe
+"C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/cmTC_e7b7b.dir/objects.a
+C:/MinGW/bin/ar.exe cr CMakeFiles/cmTC_e7b7b.dir/objects.a @CMakeFiles/cmTC_e7b7b.dir/objects1.rsp
+C:/MinGW/bin/g++.exe -Wl,--whole-archive CMakeFiles/cmTC_e7b7b.dir/objects.a -Wl,--no-whole-archive -o cmTC_e7b7b.exe -Wl,--out-implib,libcmTC_e7b7b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_e7b7b.dir/linklibs.rsp
+make[1]: Leaving directory 'D:/HK231/Embedded-System/HCMUT_EmbeddedSystemsLAB/build/CMakeFiles/CMakeTmp'
+
+
+
