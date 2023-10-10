@@ -1,0 +1,14 @@
+#ifndef __GLOBAL_H
+#define __GLOBAL_H
+
+// GPIO Values
+#define OFF         0
+#define ON          1
+
+// GPIO Pins 
+#define BUTTON_PIN  18
+
+// enable interrupt service on pin 18
+#define ESP_INTR_FLAG_DEFAULT 18
+
+#endif
