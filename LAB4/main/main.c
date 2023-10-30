@@ -17,7 +17,7 @@
 
 QueueHandle_t xQueue = NULL; 
 
-static const Data_t xStructToSend[3] =
+static const Data_t xStructToSend[2] =
 {
     {eMotoSpeed, 10},
     {eSpeedSetPoint, 5},
