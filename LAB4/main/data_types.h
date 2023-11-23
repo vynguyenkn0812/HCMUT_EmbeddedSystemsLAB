@@ -8,15 +8,20 @@
 #define QUEUE_SEND_WAITS    300
 #define QUEUE_SEND_DELAY    500
 
+#define REJECTS_TIMES       3
+
 typedef enum  
 {
     eMotoSpeed,      // Can Bus Task
     eSpeedSetPoint,  // HMI
+    eOtherTask,
 }ID_t;
 
 typedef struct {
     ID_t eDataID;  
     int32_t lDataValue;
+    char ctaskName[20];
+    int8_t rejectTimes;
 } Data_t;
 
 #endif 
