@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "global_define.h": "c",
+        "freertosconfig.h": "c",
+        "sdkconfig.h": "c",
+        "esp_flash.h": "c",
+        "semphr.h": "c",
+        "compare": "c"
+    },
+    "cmake.sourceDirectory": "C:/Espressif/frameworks/esp-idf-v5.1.1/workspace/HCMUT_EmbeddedSystemsLAB/LAB3/main",
+    "idf.espIdfPathWin": "C:\\Users\\Admin\\esp\\esp-idf",
+    "idf.pythonBinPathWin": "C:\\Users\\Admin\\.espressif\\python_env\\idf5.1_py3.11_env\\Scripts\\python.exe",
+    "idf.toolsPathWin": "C:\\Users\\Admin\\.espressif",
+    "idf.customExtraPaths": "C:\\Users\\Admin\\.espressif\\tools\\xtensa-esp32-elf\\esp32-2019r1-8.2.0\\xtensa-esp32-elf\\bin;C:\\Users\\Admin\\.espressif\\tools\\xtensa-esp32s2-elf\\esp32s2-dev-4-g3a626e93-8.2.0\\xtensa-esp32s2-elf\\bin;C:\\Users\\Admin\\.espressif\\tools\\esp32ulp-elf\\2.28.51.20170517\\esp32ulp-elf-binutils\\bin;C:\\Users\\Admin\\.espressif\\tools\\cmake\\3.13.4\\bin;C:\\Users\\Admin\\.espressif\\tools\\openocd-esp32\\v0.10.0-esp32-20190708\\openocd-esp32\\bin;C:\\Users\\Admin\\.espressif\\tools\\ninja\\1.9.0;C:\\Users\\Admin\\.espressif\\tools\\idf-exe\\1.0.1;C:\\Users\\Admin\\.espressif\\tools\\ccache\\3.7",
+    "idf.customExtraVars": {
+        "OPENOCD_SCRIPTS": "C:\\Users\\Admin\\.espressif\\tools\\openocd-esp32\\v0.10.0-esp32-20190708/openocd-esp32/share/openocd/scripts"
+    },
+    "idf.gitPathWin": "C:\\Users\\Admin\\.espressif\\tools\\idf-git\\2.39.2\\cmd\\git.exe",
+    "C_Cpp.intelliSenseEngineFallback": "enabled"
+}

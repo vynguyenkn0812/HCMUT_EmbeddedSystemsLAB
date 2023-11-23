@@ -1,4 +1,4 @@
-# Install script for directory: E:/Espressif/frameworks/esp-idf-v5.0.2/components/mbedtls/mbedtls
+# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.1.1/components/mbedtls/mbedtls
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,14 +34,14 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "E:/Espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Users/Admin/.rustup/toolchains/esp/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("E:/Users/PC/VY/HCMUT/HK231/ES/LAB/LAB1/hello_world/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
-  include("E:/Users/PC/VY/HCMUT/HK231/ES/LAB/LAB1/hello_world/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
-  include("E:/Users/PC/VY/HCMUT/HK231/ES/LAB/LAB1/hello_world/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
+  include("C:/Espressif/frameworks/esp-idf-v5.1.1/workspace/HCMUT_EmbeddedSystemsLAB/LAB1/hello_world/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
+  include("C:/Espressif/frameworks/esp-idf-v5.1.1/workspace/HCMUT_EmbeddedSystemsLAB/LAB1/hello_world/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
+  include("C:/Espressif/frameworks/esp-idf-v5.1.1/workspace/HCMUT_EmbeddedSystemsLAB/LAB1/hello_world/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
 
 endif()
 
