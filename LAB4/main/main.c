@@ -30,6 +30,7 @@ void vSenderTask(void * pvParameter) {
 
         struct QueueData *xData = malloc(sizeof(struct QueueData));
 
+        // Create task based on random number
         if (xData != NULL) {
             switch(ranTask) {
                 case eMotoSpeed:
@@ -58,6 +59,7 @@ void vSenderTask(void * pvParameter) {
                 break;
             }
 
+            // Send this random task to the queue
             if (xQueueSendToBack(xQueue, (void *)&xData, QUEUE_SEND_WAITS) != pdTRUE) {
                 printf("Failed to send %s to queue !\n", xData->cMessage);
             }
@@ -74,7 +76,10 @@ void vReceiverTask(void* pvParameter) {
     for (; ;) {
         struct TaskType *pData  = (struct TaskType *)pvParameter;
         struct QueueData *xReceivedStruct;
+        
         if (xQueue != NULL) {
+            // Check if there are any items in the queue. If yes, handle them; otherwise, increase the reject variable by 1.
+            // If the reject variable reaches its maximum, skip this task.
             if (xQueueReceive(xQueue, &xReceivedStruct, (TickType_t)QUEUE_WAITS) == pdPASS) {
                 if (xReceivedStruct->eRequestID == pData->eDataID) {
                     printf("SUCCEEDED -- I'm %s --- Received from %s task, data = %ld\n", pData->cTaskName, xReceivedStruct->cMessage, xReceivedStruct->lDataValue);
@@ -91,7 +96,7 @@ void vReceiverTask(void* pvParameter) {
                     }
                 }
             } else {
-                // printf("fan: queue empty\n");
+                // Handle empty queue
             }
         }
 
@@ -104,8 +109,10 @@ void app_main(void)
 {
     xQueue = xQueueCreate(QUEUE_SIZE, sizeof(struct QueueData *));
 
+    // create sender task
     xTaskCreate(&vSenderTask, "Sender Task", 2048, NULL, 2, NULL);
 
+    // create functional task
     xTaskCreate(&vReceiverTask, "CAN Task", 2048, (void *)&CAN, 2, NULL);
     xTaskCreate(&vReceiverTask, "HMI Task", 2048, (void *)&HMI, 2, NULL);
     xTaskCreate(&vReceiverTask, "SPI Task", 2048, (void *)&SPI, 2, NULL);
