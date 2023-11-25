@@ -3,16 +3,36 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
+<<<<<<< HEAD
 int is_button_pressed(){
     static TickType_t last_interrupt_time = 0;
     TickType_t current_interrupt_time = xTaskGetTickCount();
 
     // If interrupts come faster than the tick_difference, assume it's a bounce and ignore
     if (interrupt_time - last_interrupt_time < (DEBOUNCE_TIME * configTICK_RATE_HZ) / 1000) 
+=======
+int is_button_pressed(void)
+{
+    static TickType_t last_interrupt_time = 0;
+    TickType_t interrupt_time = xTaskGetTickCount();
+
+    // Calculate time difference in ticks equivalent to 80ms
+    TickType_t tick_difference = (DEBOUNCE_TIME * configTICK_RATE_HZ) / 1000;
+
+    // If interrupts come faster than the tick_difference, assume it's a bounce and ignore
+    if (interrupt_time - last_interrupt_time < tick_difference) 
+>>>>>>> origin/master
     {
         return false;
     }
 
+<<<<<<< HEAD
     last_interrupt_time = current_interrupt_time;
     return true;
 }
+=======
+    last_interrupt_time = interrupt_time;
+    return true;
+}
+
+>>>>>>> origin/master
