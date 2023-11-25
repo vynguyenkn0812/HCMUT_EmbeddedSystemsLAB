@@ -1,7 +1,3 @@
-/*
- * Created by Nhom 6
-*/
-
 #include <stdio.h>
 #include <inttypes.h>
 #include "driver/gpio.h"
@@ -12,75 +8,105 @@
 #include "esp_chip_info.h"
 #include "esp_flash.h"
 #include "FreeRTOSConfig.h"
+#include <string.h>
+#include <time.h>
 
 #include "data_types.h"
 
+static uint8_t TaskCount = 0;
+
 QueueHandle_t xQueue = NULL; 
 
-static const Data_t xStructToSend[3] =
-{
-    {eMotoSpeed, 10, "CAN", 0},
-    {eSpeedSetPoint, 12, "HMI", 0},
-    {eOtherTask, 13, "Other", 0},
-};
+struct TaskType CAN = {.cTaskName = "CAN", .eDataID = 0};
+struct TaskType HMI = {.cTaskName = "HMI", .eDataID = 1};
+struct TaskType SPI = {.cTaskName = "SPI", .eDataID = 2};
 
-static void vSenderTask(void *pvParameters);
-static void vReceiverTask(void *pvParameters);
-
-void app_main(void) {
-    // Create the queue
-    xQueue = xQueueCreate(QUEUE_SIZE, sizeof(Data_t)); 
-
-    // Create the sender tasks
-    xTaskCreate(vSenderTask, "Can Bus Task", 2048, (void*)&(xStructToSend), 2, NULL);
-
-    // Create the receiver task
-    xTaskCreate(vReceiverTask, "Receiver Task", 2048, (void*)&(xStructToSend[0]), 2, NULL);
-    xTaskCreate(vReceiverTask, "Receiver Task", 2048, (void*)&(xStructToSend[1]), 2, NULL);
-    xTaskCreate(vReceiverTask, "Receiver Task", 2048, (void*)&(xStructToSend[2]), 2, NULL);
-
-}
-
-
-static void vSenderTask(void *pvParameters) {
-    Data_t* pData = (Data_t*) pvParameters;
+void vSenderTask(void * pvParameter) {
+    time_t t;
+    srand((unsigned) time(&t));
 
     while (1) {
-        for (int i = 0; i < 3; i++) {
-            if (xQueueSendToBack(xQueue, &pData[i], QUEUE_SEND_WAITS) != pdTRUE) {
-                pData[i].lDataValue = (rand() % 100);
-                printf("Failed to send %d to queue !\n", pData[i].eDataID);
+        int ranTask = (rand() % 4);
+
+        struct QueueData *xData = malloc(sizeof(struct QueueData));
+
+        if (xData != NULL) {
+            switch(ranTask) {
+                case eMotoSpeed:
+                    xData->eRequestID = eMotoSpeed;
+                    strcpy(xData->cMessage, "CAN");
+                    xData->rejectTimes = 0;
+                    xData->lDataValue = rand() % 100;
+                break;
+                case eSpeedSetPoint:
+                    xData->eRequestID = eSpeedSetPoint;
+                    strcpy(xData->cMessage, "HMI");
+                    xData->rejectTimes = 0;
+                    xData->lDataValue = rand() % 100;
+                break;
+                case eSPISetMode:
+                    xData->eRequestID = eSPISetMode;
+                    strcpy(xData->cMessage, "SPI");
+                    xData->rejectTimes = 0;
+                    xData->lDataValue = rand() % 100;
+                break;
+                case Other:
+                    xData->eRequestID = 99;
+                    strcpy(xData->cMessage, "DUNNO");
+                    xData->rejectTimes = 0;
+                    xData->lDataValue = rand() % 100;
+                break;
             }
-            vTaskDelay(pdMS_TO_TICKS(QUEUE_SEND_DELAY));
+
+            if (xQueueSendToBack(xQueue, (void *)&xData, QUEUE_SEND_WAITS) != pdTRUE) {
+                printf("Failed to send %s to queue !\n", xData->cMessage);
+            }
+        } else {
+            printf("Allocated queue failed !");
         }
+        vTaskDelay(pdMS_TO_TICKS(QUEUE_SEND_DELAY));
     }
+    vTaskDelete(NULL);
 }
 
-static void vReceiverTask(void *pvParameters) {
-    while (1) {
-        Data_t xReceivedStruct;
-        Data_t* pData = (Data_t*) pvParameters;
-        if (xQueueReceive(xQueue, &xReceivedStruct, pdMS_TO_TICKS(QUEUE_WAITS)) == pdTRUE) {
-            // Receive new item
-            if (xReceivedStruct.eDataID == pData->eDataID) 
-            {
-                printf("I'm %s --- Received from %s task, data = %ld\n", pData->ctaskName, xReceivedStruct.ctaskName, xReceivedStruct.lDataValue);
-            } 
-            else 
-            {
-                printf("I'm %s --- Received from %s task, but it's not my task\n", pData->ctaskName, xReceivedStruct.ctaskName);
-                xReceivedStruct.rejectTimes++;
-                xQueueSendToFront(xQueue, &xReceivedStruct, QUEUE_WAITS);
+void vReceiverTask(void* pvParameter) {
+    TaskCount++;
+    for (; ;) {
+        struct TaskType *pData  = (struct TaskType *)pvParameter;
+        struct QueueData *xReceivedStruct;
+        if (xQueue != NULL) {
+            if (xQueueReceive(xQueue, &xReceivedStruct, (TickType_t)QUEUE_WAITS) == pdPASS) {
+                if (xReceivedStruct->eRequestID == pData->eDataID) {
+                    printf("SUCCEEDED -- I'm %s --- Received from %s task, data = %ld\n", pData->cTaskName, xReceivedStruct->cMessage, xReceivedStruct->lDataValue);
 
-                if (xReceivedStruct.rejectTimes >= REJECTS_TIMES) {
-                    printf("I'm %s ---  Task %s is rejected %d times, skiping the task\n", pData->ctaskName, xReceivedStruct.ctaskName, xReceivedStruct.rejectTimes);
-                    Data_t deleteStruct;
-                    xQueueReceive(xQueue, &deleteStruct, pdMS_TO_TICKS(QUEUE_WAITS));
-                    xReceivedStruct.rejectTimes = 0;
+                    free(xReceivedStruct);
+                } else {
+                    printf("WARNING -- I'm %s: Received from %s, but it's not my task\n",pData->cTaskName, xReceivedStruct->cMessage);
+                    if (xReceivedStruct->rejectTimes < TaskCount - 1) {
+                        xReceivedStruct->rejectTimes++;
+                        xQueueSendToFront(xQueue, (void *)&xReceivedStruct, (TickType_t)10);
+                    } else {
+                        printf("REJECTED -- This task %s is rejected %d times, skiping the task\n", xReceivedStruct->cMessage, (xReceivedStruct->rejectTimes + 1));
+                        free(xReceivedStruct);
+                    }
                 }
+            } else {
+                // printf("fan: queue empty\n");
             }
         }
+
+        vTaskDelay(pdMS_TO_TICKS(10));
     }
+    vTaskDelete(NULL);
 }
 
+void app_main(void)
+{
+    xQueue = xQueueCreate(QUEUE_SIZE, sizeof(struct QueueData *));
 
+    xTaskCreate(&vSenderTask, "Sender Task", 2048, NULL, 2, NULL);
+
+    xTaskCreate(&vReceiverTask, "CAN Task", 2048, (void *)&CAN, 2, NULL);
+    xTaskCreate(&vReceiverTask, "HMI Task", 2048, (void *)&HMI, 2, NULL);
+    xTaskCreate(&vReceiverTask, "SPI Task", 2048, (void *)&SPI, 2, NULL);
+}
